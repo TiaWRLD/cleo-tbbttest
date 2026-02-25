@@ -1,0 +1,74 @@
+:root {
+    --bg-color: #fce4ec;
+    --text-color: #5d4037;
+}
+
+* { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 2.5s ease-in-out, color 2.5s ease-in-out;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Varela Round', sans-serif;
+    overflow: hidden;
+}
+
+#app-container {
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+h2 { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px; opacity: 0.7; margin-bottom: 10px; }
+
+p { font-size: 1.4rem; line-height: 1.4; margin: 30px 0; min-height: 150px; }
+
+button {
+    background-color: var(--text-color);
+    color: var(--bg-color);
+    border: none;
+    padding: 18px 40px;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    cursor: pointer;
+}
+
+/* Log Style */
+.log-container {
+    font-family: 'JetBrains Mono', monospace;
+    text-align: left;
+    background: rgba(0,0,0,0.05);
+    padding: 20px;
+    border-radius: 15px;
+    font-size: 0.9rem;
+}
+
+.progress-container {
+    width: 100%;
+    height: 10px;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    margin-top: 20px;
+    overflow: hidden;
+}
+
+/* La barra vera e propria */
+.progress-bar {
+    height: 100%;
+    background-color: var(--text-color);
+    width: 0%; /* Parte da zero */
+    transition: width linear; /* Fondamentale per farla scorrere fluida */
+}
+
+.log-entry { margin: 10px 0; animation: fadeIn 0.5s forwards; }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+#timer { font-family: 'JetBrains Mono', monospace; font-size: 4rem; margin: 20px 0; }
