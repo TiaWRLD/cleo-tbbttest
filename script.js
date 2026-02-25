@@ -8,7 +8,7 @@ const blocchi = [
             'Se domani potessi svegliarti con una nuova qualità o abilità a tua scelta, quale sceglieresti?',
             'Se avessi la possibilità di sapere una verità sulla tua vita, il futuro o su qualsiasi altra cosa, cosa vorresti sapere?',
         ],
-        log: ['Abbiamo rotto il ghiaccio', 'Caricamento del livello successivo...'],
+        log: [''],
     },
     {
         colore: "#ce93d8",
@@ -19,7 +19,8 @@ const blocchi = [
             'C\'è qualcosa che vorresti fare da molto tempo ma che non hai ancora avuto il coraggio di fare?',
             'Qual è l\'elemento della tua vita per il quale ti senti più grata oggi?',
         ],
-        log: ['Andiamo più in profondità...', 'Sintonizzazione in corso...', 'Livello 3 pronto.'],
+        log: ['Elaboro le risposte...', 'Abbiamo rotto il ghiaccio..', 'Livello 2 pronto.'],
+
     },
     {
         colore: "#4a148c",
@@ -30,7 +31,7 @@ const blocchi = [
             'Se il nostro livello dovesse passare ad un livello successivo, cosa dovrei sapere di te?',
             'Dimmi qualcosa che ti piace particolarmente di me',
         ],
-        log: ['Manca un\'ultima domanda', 'Connessione in corso...', 'Caricamento domanda finale'],
+        log: ['Andiamo più in profondità...', 'Sintonizzazione in corso...', 'Livello 3 pronto.'],
     },
     {
         colore: "#390b70",
@@ -38,7 +39,8 @@ const blocchi = [
         domande: [
             'Se dovessi morire oggi senza poter parlare con nessuno, cosa rimpiangeresti di non aver mai detto?'
         ],
-        log: ['E adesso è il momento dell\'ultima prova...', 'il momento del silenzio'],
+        log: ['Manca un\'ultima domanda prima della prova finale', 'Connessione in corso...', 'Caricamento domanda finale'],
+        //log: ['E adesso è il momento dell\'ultima prova...', 'il momento del silenzio'],
     }
 ];
 
@@ -48,8 +50,6 @@ let domandaCorrente = 0;
 function mostraDomanda() {
     const container = document.getElementById('app-container');
     const blocco = blocchi[bloccoCorrente];
-
-    // CORREZIONE: Usiamo i nomi variabili corretti
     if (domandaCorrente < blocco.domande.length) {
         container.innerHTML = `
             <h2 style="font-size: 0.8rem; opacity: 0.7;">Livello ${bloccoCorrente + 1}</h2>
