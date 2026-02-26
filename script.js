@@ -143,5 +143,19 @@ function startCountdown() {
     }, 1000);
 }
 
+function schermataIniziale() {
+    const container = document.getElementById('app-container');
+    document.documentElement.style.setProperty('--bg-color', blocchi[0].colore);
+    document.documentElement.style.setProperty('--text-color', blocchi[0].testo);
+
+    container.innerHTML = `
+        <h1 style="margin-bottom: 20px;">Pronti per l'esperimento?</h1>
+        <p style="font-size: 1.1rem; min-height: auto; margin-bottom: 40px;">
+            basato sull\'esperimento delle 36 domande per innamorarsi ideato dallo psicologo Arthur Aron
+        </p>
+        <button onclick="mostraDomanda()">Inizia il test</button>
+    `;
+}
+
 // Avvia tutto solo quando il DOM è pronto
-document.addEventListener('DOMContentLoaded', mostraDomanda);
+document.addEventListener('DOMContentLoaded', schermataIniziale);
